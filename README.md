@@ -1,8 +1,24 @@
+# Vendor, Order Tracker
+### This application leverages the Objects-within-Objects design pattern, uses the ASP.NET MVC in accordance with CRUD best practices
+
+### Author: Genesis Scott
+
+### Technologies Used
+- C#
+- ASP.NET
+- MSTest
+- Visual Studio MVC
+
+### Setup/Installation Requirements
 
 
-1. Create a Vendor class. {name, description, List of Orders}
-Create an Order class. This class should include properties for the title, the description, the price, the date, and any other properties you would like to include.
-The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming Pierre and providing him with a link to a Vendors page.
-The vendors page should contain a link to a page presenting Pierre with a form he can fill out to create a new Vendor. After the form is submitted, the new Vendor object should be saved into a static List and Pierre should be routed back to the homepage.
-Pierre should be able to click a Vendor's name and go to a new page that will display all of that Vendor's orders.
-Pierre should be provided with a link to a page presenting him with a form to create a new Order for a particular Vendor. Hint: The route for this page might look something like: "/vendors/1/orders/new".
+1. Clone the repository to your local machine using the command `git clone https://github.com/your-username/your-repository.git`.
+2. Navigate to the project directory using the command `cd your-repository`.
+3. Enter the command `dotnet restore` to restore the project dependencies.
+5. Run the command `dotnet run` to run the project.
+
+**Note: This assumes that you have already installed .NET Core SDK on your machine. If you haven't, please download and install it from the official .NET website.**
+
+
+## License
+MIT License
