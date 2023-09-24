@@ -1,0 +1,14 @@
+@using VendorOrderTracker.Models;
+@{
+  Layout = "_Layout";
+}
+
+@foreach (var vendor in Model)
+{
+  <div class="container">
+    <li>Name: @vendor.Name</li>
+    <a href="#">View Orders</a>
+  </div>
+}
+
+<a href="/vendors/new">Add A Vendor</a>

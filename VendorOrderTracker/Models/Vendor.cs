@@ -7,6 +7,7 @@ public class Vendor
   public string Description {get; set;}
   public List<Order> OrderList {get; set;}
 
+  private static List<Vendor> _allVendors = new List<Vendor>();
   public Vendor()
   {
 
@@ -30,7 +31,11 @@ public class Vendor
     return OrderList[oID-1];
   }
 
-
+  public static  List<Vendor> GetAll()
+  {
+    return _allVendors;
+  }
+  
 
 
 }
