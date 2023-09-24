@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 namespace VendorOrderTracker.Models;
 
 public class Vendor 
@@ -15,7 +16,20 @@ public class Vendor
   {
     this.Name = name;
     this.Description = description;
+    OrderList = new List<Order>();
   }
+
+  public void AddOrder(Order toAdd)
+  {
+    OrderList.Add(toAdd);
+    toAdd.OrderId = OrderList.Count;
+  }
+
+  public Order GetOrderById(int oID)
+  {
+    return OrderList[oID-1];
+  }
+
 
 
 

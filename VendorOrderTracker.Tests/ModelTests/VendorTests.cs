@@ -4,6 +4,7 @@ using VendorOrderTracker.Models;
 using System;
 
 namespace VendorOrderTracker.Test;
+#nullable enable
 
 [TestClass]
 public class VendorTest
@@ -34,6 +35,29 @@ public class VendorTest
   }
 
   //implementing Order class to make the OrderList compile
+  [TestMethod]
+  public void AddOrder_ShouldAddOrderToList_Void()
+  {
+    Vendor greg = new Vendor("greg", "bread seller");
+    Order loaf = new Order(12.00, "Greg's Order", "1 Loaf from Greg");
+    greg.AddOrder(loaf);
+
+    Assert.AreEqual(greg.OrderList[0], loaf);
+  } 
+
+  [TestMethod]
+  public void GetById_ShouldReturnOrderByID_Order()
+  {
+
+    Vendor greg = new Vendor("greg", "bread seller");
+    Order loaf = new Order(12.00, "Greg's Order", "1 Loaf from Greg");
+    greg.AddOrder(loaf);
+
+    Order? actual = greg.GetOrderById(loaf.OrderId);
+    
+    Assert.AreEqual(loaf, actual);
+
+  }
 
 
 
