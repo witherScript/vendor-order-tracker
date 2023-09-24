@@ -9,7 +9,6 @@ public class Order
   public string Description {get; set;}
   public int OrderId {get; set;}
 
-
   public Order()
   {
 
@@ -21,7 +20,6 @@ public class Order
     this.Total = total;
     this.Title = title;
     this.Description = desc;
-  
   }
 
 }

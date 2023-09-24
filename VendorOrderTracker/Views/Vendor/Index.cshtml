@@ -2,12 +2,12 @@
 @{
   Layout = "_Layout";
 }
-
-@foreach (var vendor in Model)
+<h2>Vendors List</h2>
+@foreach (var vendor in @Model)
 {
   <div class="container">
     <li>Name: @vendor.Name</li>
-    <a href="#">View Orders</a>
+    <a href="/vendors/@vendor.VendorId/orders">View Orders</a>
   </div>
 }
 

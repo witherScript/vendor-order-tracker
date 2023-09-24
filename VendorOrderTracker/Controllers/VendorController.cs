@@ -22,4 +22,42 @@ public class VendorController : Controller
   {
     return View();
   }
+
+  [HttpPost("/vendors")]
+  public ActionResult Create(string vendorName, string vendorDesc)
+  {
+    Vendor greg = new Vendor(vendorName, vendorDesc);
+    return RedirectToAction("Index");
+  }
+
+
+  [HttpGet("/vendors/{id}/orders")]
+  public ActionResult Show(int id)
+  {
+    Dictionary<string, object> model = new Dictionary<string, object>();
+    Vendor vendor = Vendor.GetById(id);
+    List<Order> orders = vendor.OrderList;
+    model.Add("vendor", vendor);
+    model.Add("orders", orders);
+
+    return View(model);
+  }
+
+  [HttpPost("/vendors/{id}/orders/")]
+   public ActionResult Create(int VendorId, string orderTitle, string orderDescription, double orderTotal)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor vendor = Vendor.GetById(VendorId);
+      Order newOrder = new Order(orderTotal, orderTitle, orderDescription);
+      
+      vendor.AddOrder(newOrder);
+      List<Order> orders = vendor.OrderList;
+      model.Add("orders", orders);
+      model.Add("vendor", vendor);
+      return View("Show", model);
+    }
+
+  
+
+
 }
