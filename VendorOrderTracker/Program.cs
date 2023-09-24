@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-namespace MadLibs
+namespace VendorOrderTracker
 {
   class Program
   {
