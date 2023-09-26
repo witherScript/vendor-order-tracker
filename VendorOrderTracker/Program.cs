@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-namespace MadLibs
+using VendorOrderTracker.Models;
+namespace VendorOrderTracker
 {
   class Program
   {
@@ -8,6 +9,7 @@ namespace MadLibs
     {
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
       builder.Services.AddControllersWithViews();
+      DBConfiguration.ConnectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
       WebApplication app = builder.Build();
       app.UseHttpsRedirection();
       app.UseRouting();

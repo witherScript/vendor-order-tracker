@@ -9,7 +9,7 @@ public class OrdersController:Controller
   [HttpGet("/vendors/{VendorId}/orders/new")]
     public ActionResult New(int VendorId)
     {
-      Vendor vendor = Vendor.GetById(VendorId);
-      return View(vendor);
+      //Vendor vendor = Vendor.GetById(VendorId);
+      return View();
     }
 }

@@ -35,7 +35,7 @@ public class VendorController : Controller
   public ActionResult Show(int id)
   {
     Dictionary<string, object> model = new Dictionary<string, object>();
-    Vendor vendor = Vendor.GetById(id);
+    Vendor vendor = new Vendor();
     List<Order> orders = vendor.OrderList;
     model.Add("vendor", vendor);
     model.Add("orders", orders);
@@ -47,7 +47,7 @@ public class VendorController : Controller
    public ActionResult Create(int VendorId, string orderTitle, string orderDescription, double orderTotal)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor vendor = Vendor.GetById(VendorId);
+      Vendor vendor = new Vendor();
       Order newOrder = new Order(orderTotal, orderTitle, orderDescription);
       
       vendor.AddOrder(newOrder);
